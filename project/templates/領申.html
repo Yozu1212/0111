@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>領用查詢</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function fetchUsageData() {
+            var userID = document.getElementById("userID").value;
+
+            // 使用 Ajax 或其他方式向後端發送請求，獲取資料
+            // 這裡僅為示範，實際情況需要後端的支援
+            fetch(`/api/usage/${userID}`)
+                .then(response => response.json())
+                .then(data => {
+                    // 將資料填入 HTML 元素中
+                    document.getElementById("itemName").textContent = data.itemName;
+                    document.getElementById("quantity").textContent = data.quantity;
+                    document.getElementById("applicationDate").textContent = data.applicationDate;
+                    document.getElementById("purpose").textContent = data.purpose;
+                })
+                .catch(error => {
+                    console.error('Error fetching usage data:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>領用查詢</h1>
+    <form>
+        <label for="userID">請輸入領用人ID：</label>
+        <input type="text" id="userID" name="userID" required>
+        <button type="button" onclick="fetchUsageData()">查詢</button>
+    </form>
+
+    <h2>領用詳細資訊：</h2>
+    <ul>
+        <li>品項名稱: <span id="itemName"></span></li>
+        <li>領用數量: <span id="quantity"></span></li>
+        <li>申請日期: <span id="applicationDate"></span></li>
+        <li>申請之用途: <span id="purpose"></span></li>
+    </ul>
+</body>
+</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>返回上一頁</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        
+        <button onclick="goBack()"><a href="in.html">回到上一頁</a></button>
+    </body>
+    </html>
+
+</body>
+</html>

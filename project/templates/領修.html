@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>領用單修改</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            text-align: left; /* 將按鈕上的文字左對齊 */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+        function fetchItemData() {
+            // 在這裡加入與資料庫的連接邏輯，並取得相應的資料
+            // 將資料填入 HTML 元素中
+        }
+    </script>
+</head>
+<body>
+    <h1>領用單號查詢</h1>
+    <form>
+        <label for="itemNumber">請輸入領用批號：</label>
+        <input type="text" id="itemNumber" name="itemNumber" required>
+        <button type="button" onclick="fetchItemData()">查詢</button>
+    </form>
+
+    <h2>採購單詳細資訊：</h2>
+    <ul>
+        <li>領用人名稱: <span id="itemName"></span></li>
+        <li>品項名稱: 
+            <select id="itemCategory" name="itemCategory">
+                <option value="能量棒">能量棒</option>
+                <option value="蛋白質粉末">蛋白質粉末</option>
+                <option value="維生素A">維生素A</option>
+                <option value="運動飲料A">運動飲料A</option>
+                <option value="運動飲料B">運動飲料B</option>
+            </select>
+        <li>品項數量: <input type="number" name="quantity" required></li>
+        <li>日期: <input type="date" id="purchaseDate" name="purchaseDate"></li>
+
+    </ul>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完成領用訂單</title>
+</head>
+<body>
+
+    <!-- 你的網頁內容在這裡 -->
+
+    <!-- 提交按鈕 -->
+    <form>
+        <!-- 其他表單元素在這裡 -->
+        
+        <!-- 提交按鈕 -->
+        <button type="button" onclick="showCompletionMessage()">提交</button>
+    </form>
+
+    <!-- 顯示訊息的區域 -->
+    <p id="completionMessage" style="display: none;">完成領用訂單修改</p>
+
+    <!-- JavaScript 代碼 -->
+    <script>
+        function showCompletionMessage() {
+            // 顯示訊息
+            document.getElementById("completionMessage").style.display = "block";
+        }
+    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回上一頁</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+    
+    <button onclick="goBack()"><a href="in.html">回到上一頁</a></button>
+</body>
+</html>
+</body>
+

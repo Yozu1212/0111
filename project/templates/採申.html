@@ -1,0 +1,200 @@
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    form {
+        max-width: 600px; /* Adjust the maximum width as needed */
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Additional styles for the completion message */
+    #completionMessage {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: green; /* Adjust the color as needed */
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申請採購訂單</title>
+</head>
+<body>
+
+<h1>申請採購訂單</h1>
+
+<form id="purchaseOrderForm">
+    <label for="staffId">承辦人編號：</label>
+    <input type="text" id="staffId" name="staffId" required><br>
+
+    <label for="purchaseDate">採購日期：</label>
+    <input type="date" name="purchaseDate" required>
+
+    <div id="itemsContainer">
+        <!-- 初始的品項輸入欄位 -->
+        <div class="item">
+            <label for="productName">品項名稱：</label>
+            <input type="text" name="productNames" required>
+
+            <label for="quantity">品項數量：</label>
+            <input type="number" name="quantity" required>
+
+        </div>
+    </div>
+
+
+
+</form>
+
+<!-- additional.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Page</title>
+</head>
+<body>
+
+<h2>新增品項</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>品項名稱</th>
+            <th>品項數量</th>
+        </tr>
+    </thead>
+    <tbody id="itemList">
+        <!-- 新增的品項將顯示在這裡 -->
+    </tbody>
+</table>
+
+<button onclick="addAdditionalItem()">新增品項</button>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完成採購訂單</title>
+</head>
+<body>
+
+    <!-- 你的網頁內容在這裡 -->
+
+    <!-- 提交按鈕 -->
+    <form>
+        <!-- 其他表單元素在這裡 -->
+        
+        <!-- 提交按鈕 -->
+        <button type="button" onclick="showCompletionMessage()">提交</button>
+    </form>
+
+    <!-- 顯示訊息的區域 -->
+    <p id="completionMessage" style="display: none;">完成採購訂單</p>
+
+    <!-- JavaScript 代碼 -->
+    <script>
+        function showCompletionMessage() {
+            // 顯示訊息
+            document.getElementById("completionMessage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
+
+<script>
+    function addAdditionalItem() {
+        var itemList = document.getElementById("itemList");
+
+        // 動態生成新的品項行
+        var newItemRow = document.createElement("tr");
+
+        // 動態生成新的品項名稱欄位
+        var newProductNameCell = document.createElement("td");
+        var newProductNameInput = document.createElement("input");
+        newProductNameInput.type = "text";
+        newProductNameInput.name = "productNames";
+        newProductNameCell.appendChild(newProductNameInput);
+        newItemRow.appendChild(newProductNameCell);
+
+        // 動態生成新的品項數量欄位
+        var newQuantityCell = document.createElement("td");
+        var newQuantityInput = document.createElement("input");
+        newQuantityInput.type = "number";
+        newQuantityInput.name = "quantity";
+        newQuantityCell.appendChild(newQuantityInput);
+        newItemRow.appendChild(newQuantityCell);
+
+        // 將新的品項行插入到表格中
+        itemList.appendChild(newItemRow);
+
+
+
+    }
+
+    function submitForm() {
+        // 獲取表單數據
+        var staffId = document.getElementById("staffId").value;
+
+        // 獲取動態生成的品項名稱、品項數量和採購日期
+        var itemContainers = document.getElementsByClassName("item");
+        var itemsData = [];
+
+        for (var i = 0; i < itemContainers.length; i++) {
+            var productName = itemContainers[i].querySelector("input[name='productNames']").value;
+            var quantity = itemContainers[i].querySelector("input[name='quantity']").value;
+            var purchaseDate = itemContainers[i].querySelector("input[name='purchaseDate']").value;
+
+            itemsData.push({
+                productName: productName,
+                quantity: quantity,
+                purchaseDate: purchaseDate
+            });
+        }
+
+        // 在這裡你需要使用JavaScript將數據提交到後端（可能是一個伺服器端腳本）
+        // 這裡只是一個簡單的範例，實際上你可能需要使用AJAX或其他技術進行非同步提交
+
+        // 在後端處理完新增資料到Access資料庫後，可以返回成功或失敗的訊息給前端
+        // 這裡只是一個簡單的提醒，實際上需要根據你的後端實現進行調整
+        alert("採購訂單已提交！");
+    }
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回上一頁</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+    
+    <button onclick="goBack()"><a href="inin.html">回到上一頁</a></button>
+</body>
+</html>
+
+</body>
+</html>

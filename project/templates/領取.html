@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Purchase Order</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center; /* 將文本置中 */
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 8px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>刪除領用單</h2>
+
+  <form id="deleteForm">
+    <label for="purchaseOrderNumber">領用單批號:</label>
+    <input type="text" id="purchaseOrderNumber" name="purchaseOrderNumber" required>
+    <br>
+    <button type="button" onclick="deletePurchaseOrder()">刪除</button>
+  </form>
+
+  <script>
+    function deletePurchaseOrder() {
+      var purchaseOrderNumber = document.getElementById("purchaseOrderNumber").value;
+      
+      // 在這裡，你可以使用Ajax或其他技術將 purchaseOrderNumber 發送給後端，執行刪除資料的操作。
+
+      // 這裡僅是示範，你需要根據實際情況修改。
+      alert("Purchase Order " + purchaseOrderNumber + " deleted successfully.");
+    }
+  </script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回上一頁</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+    
+    <button onclick="goBack()"><a href="in.html">回到上一頁</a></button>
+</body>
+
+</body>
+</html>

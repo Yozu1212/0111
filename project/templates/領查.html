@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>領用查詢</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function fetchUsageData() {
+            // 在這裡加入與資料庫的連接邏輯，並取得相應的資料
+            // 將資料填入相應的 HTML 元素中
+        }
+    </script>
+</head>
+<body>
+    <h1>領用查詢</h1>
+    <form>
+        <label for="batchNumber">請輸入領用批號：</label>
+        <input type="text" id="batchNumber" name="batchNumber" required>
+        <button type="button" onclick="fetchUsageData()">查詢</button>
+    </form>
+
+    <h2>領用詳細資訊：</h2>
+    <ul>
+        <li>領用人名稱: <span id="userName"></span></li>
+        <li>品項: <span id="item"></span></li>
+        <li>領用數量: <span id="quantity"></span></li>
+        <li>預計出貨日: <span id="expectedShipDate"></span></li>
+        <li>實際出貨日: <span id="actualShipDate"></span></li>
+    </ul>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>返回上一頁</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        
+        <button onclick="goBack()"><a href="in.html">回到上一頁</a></button>
+    </body>
+    </html>
+</body>
+</html>

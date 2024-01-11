@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採購單查詢</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            text-align: left; /* 新增這一行以將按鈕上的文字左對齊 */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function fetchPurchaseData() {
+            // 在這裡加入與資料庫的連接邏輯，並取得相應的資料
+            // 將資料填入 HTML 元素中
+        }
+    </script>
+</head>
+<body>
+    <h1>採購單查詢</h1>
+    <form>
+        <label for="purchaseOrderNumber">請輸入採購單號：</label>
+        <input type="text" id="purchaseOrderNumber" name="purchaseOrderNumber" required>
+        <button type="button" onclick="fetchPurchaseData()">送出</button>
+    </form>
+
+    <h2>採購單詳細資訊：</h2>
+    <ul>
+        <li>承辦人員ID: <span id="userId"></span></li>
+        <li>廠商名稱: <span id="vendorName"></span></li>
+        <li>品項名稱: <span id="itemName"></span></li>
+        <li>品項類別: <span id="itemName"></span></li>
+        <li>品項規格: <span id="itemCategory"></span></li>
+        <li>品項數量: <span id="itemQuantity"></span></li>
+        <li>預計交貨日: <span id="itemCategory"></span></li>
+        <li>實際接收量: <span id="itemCategory"></span></li>
+        <li>預計接收量: <span id="itemCategory"></span></li>
+        <li>進貨單單號: <span id="itemCategory"></span></li>
+        <li>部門名稱: <span id="itemCategory"></span></li>
+        <li>單價: <span id="unitPrice"></span></li>
+        <li>採購日期: <span id="purchaseDate"></span></li>
+    </ul>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>返回上一頁</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        
+        <button onclick="goBack()"><a href="inin.html">回到上一頁</a></button>
+    </body>
+    </html>
+    
+</body>
+</html>

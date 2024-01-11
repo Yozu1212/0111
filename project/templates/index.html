@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國訓中心倉儲系統</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>國訓中心倉儲系統</h1>
+</header>
+
+<section>
+    <form id="loginForm">
+        <label for="username">帳號：</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">密碼：</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="login()">登入</button>
+    </form>
+</section>
+
+<script>
+    function login() {
+        var password = document.getElementById('password').value;
+        var firstLetter = password.charAt(0).toLowerCase(); // 將首字母轉為小寫
+
+        switch (firstLetter) {
+            case 'a':
+                // 導向領用人的首頁
+                window.location.href = 'ina.html';
+                break;
+            case 'b':
+            case 'c':
+                // 導向承辦人員和主管的共同首頁
+                window.location.href = 'inin.html';
+                break;
+            default:
+                alert('未知用戶類型，請檢查密碼！');
+                break;
+        }
+    }
+</script>
+
+
+<footer>
+    <p>&copy; 2024 國訓中心</p>
+</footer>
+
+</body>
+</html>
